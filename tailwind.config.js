@@ -5,7 +5,8 @@ module.exports = {
     extend: {
       colors:{
         'z-red': {
-          600: '#E6465C'
+          600: '#E6465C',
+          700: '#BD3245'
         },
         'z-teal': {
           600: '#01AFC3'

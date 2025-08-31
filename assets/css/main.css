@@ -626,6 +626,10 @@ video {
   flex-direction: column;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
@@ -638,8 +642,8 @@ video {
   justify-content: space-between;
 }
 
-.gap-2 {
-  gap: 0.5rem;
+.gap-0 {
+  gap: 0px;
 }
 
 .gap-5 {
@@ -657,6 +661,11 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xs {
@@ -757,6 +766,9 @@ figure img {
   padding-right: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .primary {
@@ -765,6 +777,11 @@ figure img {
   background-color: rgb(230 70 92 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(189 50 69 / var(--tw-bg-opacity));
 }
 
 .primary span, .primary i {
@@ -777,6 +794,15 @@ figure img {
   --tw-border-opacity: 1;
   border-color: rgb(230 70 92 / var(--tw-border-opacity));
   background-color: transparent;
+  --tw-text-opacity: 1;
+  color: rgb(230 70 92 / var(--tw-text-opacity));
+}
+
+.secondary:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(189 50 69 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(230 70 92 / var(--tw-text-opacity));
 }
@@ -824,6 +850,30 @@ header {
   padding-bottom: 0.5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+
+.top-header .btn.primary.with-icon {
+  background-color: transparent;
+}
+
+.top-header .btn.primary.with-icon span,
+  .top-header .btn.primary.with-icon i {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.top-header .btn.primary.with-icon:hover span,
+  .top-header .btn.primary.with-icon:hover i {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
+}
+
+.top-header .btn.primary.with-icon i {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .bottom-header {
@@ -1313,6 +1363,19 @@ footer {
   .embed-media {
     padding-top: 67%;
   }
+
+  .top-header .btn.primary.with-icon {
+    background-color: transparent;
+    --tw-text-opacity: 1;
+    color: rgb(230 70 92 / var(--tw-text-opacity));
+  }
+
+  .top-header .btn.primary.with-icon i {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(22 163 74 / var(--tw-text-opacity));
+  }
 }
 
 .ads-slider.owl-carousel .owl-nav button{
@@ -1431,6 +1494,10 @@ nav a.active i{
 
   .sm\:hidden {
     display: none;
+  }
+
+  .sm\:gap-2 {
+    gap: 0.5rem;
   }
 }
 

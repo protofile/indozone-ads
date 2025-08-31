@@ -88,16 +88,16 @@
 
   /* Buttons */
   .btn {
-    @apply py-2 px-4 text-sm flex items-center rounded-lg;
+    @apply py-2 px-4 text-sm flex items-center rounded-lg transition-all;
   }
   .primary{
-    @apply bg-z-red-600 text-white border-0;
+    @apply bg-z-red-600 hover:bg-z-red-700 text-white border-0;
   }
   .primary span, .primary i{
     @apply text-white;
   }
   .secondary {
-    @apply bg-transparent border-2 border-z-red-600 text-z-red-600;
+    @apply bg-transparent border-2 border-z-red-600 text-z-red-600 hover:border-z-red-700 hover:text-z-red-600 hover:bg-red-100;
   }
   .btn.with-icon{
     @apply px-3 gap-1;
@@ -115,6 +115,20 @@
   }
   .top-header{
     @apply w-full max-w-[1200px] mx-auto flex justify-between items-center py-2 px-5;
+  }
+  .top-header .btn.primary.with-icon{
+    @apply bg-transparent;
+  }
+  .top-header .btn.primary.with-icon span,
+  .top-header .btn.primary.with-icon i{
+    @apply text-green-600 transition-all;
+  }
+  .top-header .btn.primary.with-icon:hover span,
+  .top-header .btn.primary.with-icon:hover i{
+    @apply text-green-700;
+  }
+  .top-header .btn.primary.with-icon i{
+    @apply text-2xl
   }
   .bottom-header{
     @apply w-full flex justify-between bg-z-red-600;
@@ -288,6 +302,12 @@
     }
     .embed-media{
         @apply pt-[67%];
+    }
+    .top-header .btn.primary.with-icon{
+        @apply bg-transparent text-z-red-600;
+    }
+    .top-header .btn.primary.with-icon i{
+        @apply text-green-600 text-3xl;
     }
   }
 }

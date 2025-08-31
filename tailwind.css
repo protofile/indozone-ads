@@ -117,7 +117,7 @@
     @apply w-full max-w-[1200px] mx-auto flex justify-between items-center py-2 px-5;
   }
   .bottom-header{
-    @apply w-full hidden md:flex justify-between bg-z-red-600;
+    @apply w-full flex justify-between bg-z-red-600;
   }
   .src-form{
     @apply relative w-[120px] sm:w-[200px];
@@ -199,13 +199,19 @@
     @apply right-0
   }
   .cat-card{
-    @apply bg-white p-6 rounded-lg flex flex-col gap-4;
+    @apply bg-white p-4 md:p-6 rounded-lg flex flex-col gap-4;
   }
   .cat-card img{
     @apply w-full;
   }
+  .cat-card .btn{
+    @apply text-xs;
+  }
+  .embed-media{
+    @apply w-full max-w-[997px] mx-auto h-0 pt-[52%] relative;
+  }
   .embed-media iframe{
-    @apply w-full;
+    @apply w-full h-full absolute top-0 left-0 shadow-2xl rounded-lg;
   }
   .ads-article{
     @apply grid grid-cols-1 md:grid-cols-3 gap-5;
@@ -237,6 +243,52 @@
   }
   .burger{
     @apply w-9 h-9 flex justify-center items-center text-2xl;
+  }
+
+  @media only screen and (max-width: 768px){
+    header{
+        @apply fixed top-0 left-0;
+    }
+    body{
+        @apply pt-14;
+    }
+    .bottom-header{
+        @apply fixed top-14 -right-[100%] w-[240px] bg-white shadow-2xl h-[calc(100vh-56px)] transition-all;
+    }
+    .bottom-header.show{
+        @apply right-0;
+    }
+    nav{
+        @apply flex-col gap-0 px-0;
+    }
+    nav .item{
+        @apply w-full border-b border-slate-200;
+    }
+    nav .item a{
+        @apply flex items-center gap-2 justify-end flex-row-reverse text-slate-700 px-4;
+    }
+    nav a.active,
+    nav a.active i{
+        @apply !text-z-red-600;
+    }
+    nav .item a i{
+        @apply text-slate-700;
+    }
+    .dropdown{
+        @apply relative top-auto left-auto shadow-none w-full;
+    }
+    nav .item .dropdown .sub-item{
+        @apply border-b-transparent pl-6;
+    }
+    nav .item .dropdown .sub-item a{
+        @apply flex-row justify-start;
+    }
+    .cat-card h5{
+        @apply w-full overflow-hidden text-md whitespace-nowrap text-ellipsis;
+    }
+    .embed-media{
+        @apply pt-[67%];
+    }
   }
 }
 

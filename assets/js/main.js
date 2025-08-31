@@ -1,10 +1,17 @@
 $(document).ready(function(){
     $("a.has-dropdown").click(function(hd){
         hd.preventDefault();
-        $(".dropdown").removeClass("show");
-        $(".sub-dropdown").removeClass("show");
-        $(this).addClass("active");
-        $($(this).next()).addClass("show");
+        
+        if ($(window).width() <= 768) {
+            $(this).toggleClass("active");
+            $($(this).next()).toggleClass("show");
+        }else{
+            $(".dropdown").removeClass("show");
+            $(".sub-dropdown").removeClass("show");
+            $(this).addClass("active");
+            $($(this).next()).addClass("show");
+        }
+        
     });
 
     $(document).click(function (e) {
@@ -20,6 +27,11 @@ $(document).ready(function(){
         hsd.preventDefault();
         $(this).toggleClass("active");
         $($(this).next()).toggleClass("show");
+    });
+
+    $(".burger").click(function(){
+        $($(this).children("i")).toggleClass("ri-menu-line ri-close-line");
+        $(".bottom-header").toggleClass("show");
     });
 
 
